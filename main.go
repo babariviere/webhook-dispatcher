@@ -47,6 +47,9 @@ func dispatch(cfg Config) http.HandlerFunc {
 				log.Printf("Invalid request in config for path %s: %s", r.URL.Path, err)
 				continue
 			}
+            req.Header = r.Header
+            req.Form = r.Form
+            req.ContentLength = r.ContentLength
 			_, err = client.Do(req)
 			if err != nil {
 				log.Printf("Request failed: %s", err)
