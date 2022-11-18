@@ -41,6 +41,8 @@ func dispatch(cfg Config) http.HandlerFunc {
 		}
 
 		log.Printf("Dispatching request for path: %s", r.URL.Path)
+
+        var i int
 		for _, location := range locations {
 			req, err := http.NewRequest(r.Method, location.URL, ioutil.NopCloser(bytes.NewBuffer(bodyBytes)))
 			if err != nil {
@@ -53,8 +55,12 @@ func dispatch(cfg Config) http.HandlerFunc {
 			_, err = client.Do(req)
 			if err != nil {
 				log.Printf("Request failed: %s", err)
+                continue
 			}
+            i += 1
 		}
+
+        log.Printf("Sent request for path %s to %v/%v locations", r.URL.Path, i, len(locations))
 
         w.Write([]byte("OK\n"))
 	}
