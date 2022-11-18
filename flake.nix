@@ -15,7 +15,7 @@
           webhook-dispatcher = pkgs.buildGoModule {
             name = "webhook-dispatcher";
             src = ./.;
-            vendorSha256 = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo=";
+            vendorSha256 = "sha256-K/8AfZQq4Y+nnKqAYFa/+Lojr2r+HkT+MmvMHh43C58=";
           };
         };
 
