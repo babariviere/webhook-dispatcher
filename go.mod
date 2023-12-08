@@ -2,7 +2,7 @@ module github.com/babariviere/webhook-dispatcher
 
 go 1.19
 
-require github.com/spf13/viper v1.18.0
+require github.com/spf13/viper v1.18.1
 
 require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
