@@ -2,7 +2,7 @@ module github.com/babariviere/webhook-dispatcher
 
 go 1.21.0
 
-toolchain go1.25.1
+toolchain go1.25.2
 
 require github.com/spf13/viper v1.20.1
 
